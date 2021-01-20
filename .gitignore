@@ -1,0 +1,3 @@
+out
+node_modules/
+vscode-kubernetes-edit-kubeconfig-*.vsix

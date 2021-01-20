@@ -1,0 +1,58 @@
+{
+  "name": "vscode-kubernetes-edit-kubeconfig",
+  "displayName": "Edit kubeconfig files",
+  "icon": "images/icon.png",
+  "description": "Edit kubeconfig files",
+  "version": "1.0.4",
+  "publisher": "sandipchitale",
+  "engines": {
+    "vscode": "^1.47.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sandipchitale/vscode-kubernetes-edit-kubeconfig.git"
+  },
+  "main": "./out/extension.js",
+  "extensionDependencies": [
+    "ms-kubernetes-tools.vscode-kubernetes-tools"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.vscode-kubernetes.edit-kubeconfig",
+        "title": "Edit Kubeconfig",
+        "category": "Kubernetes"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "extension.vscode-kubernetes.edit-kubeconfig",
+          "when": "view == extension.vsKubernetesExplorer",
+          "group": "1"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint . --ext .ts,.tsx",
+    "watch": "tsc -w -p ./"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.0.2",
+    "@typescript-eslint/parser": "^3.0.2",
+    "eslint": "^7.1.0",
+    "typescript": "^4.0.2",
+    "@types/vscode": "^1.47.0",
+    "@types/node": "^12.12.0"
+  }
+}
